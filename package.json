@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "piggybank",
   "version": "0.0.0",
   "description": "Hello Expo!",
@@ -12,4 +13,28 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-17.0.0.tar.gz",
     "react-native-textinput-effects": "^0.3.1"
   }
+=======
+  "name": "@expo/vector-icons",
+  "version": "5.0.0",
+  "description": "Built-in support for 10 popular icon fonts and the tooling to create your own Icon components from your font and glyph map. This is a wrapper around react-native-vector-icons to make it compatible with Expo.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/expo/vector-icons.git"
+  },
+  "keywords": [
+    "expo"
+  ],
+  "author": "Brent Vatne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/expo/vector-icons/issues"
+  },
+  "homepage": "https://expo.github.io/vector-icons",
+  "dependencies": {
+    "react-native-vector-icons": "4.1.1"
+  },
+  "devDependencies": {}
+>>>>>>> f05e92dde539398e93bb4aeaf07abd5258f9b769
 }

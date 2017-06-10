@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "963054344706",
+    "firebase_url": "https://piggyno1-e0b83.firebaseio.com",
+    "project_id": "piggyno1-e0b83",
+    "storage_bucket": "piggyno1-e0b83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963054344706:android:a8ceeb2508484fdd",
+        "android_client_info": {
+          "package_name": "com.piggy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963054344706-ga0toiccv35hn4pm05em6nfsomk93q37.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBgU92Rn3s4IGKYaUWArGsEVNVgUxRFy0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
