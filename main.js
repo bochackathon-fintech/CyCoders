@@ -1,6 +1,6 @@
 import Expo from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight} from 'react-native';
 import * as firebase from 'firebase';
 
 
@@ -13,47 +13,56 @@ const config = {
   messagingSenderId: "875965742442"
 };
 var fire =  firebase.initializeApp(config);
-const messaging = firebase.messaging()
-.then(function () {
-  console.log('Have Permission');
-  return messaging.getToken();
-})
-.then(function() {
-  console.log(token);
-})
-.catch (function () {
-  console.log('Error Occured.');
-})
 
+// Define Clickable Button for Main Render Function
+class Button extends React.Component{
+  render () {
+    return (
+      <TouchableHighlight onPress = { () => { console.log(this.props.value)}} >
+      <View style={styles.button}>
+        <Text style={styles.buttonText}>Tap Me</Text>
+      </View>
+      </TouchableHighlight>
+    )
+  }
+}
 
+// Initial App Class Component
 class App extends React.Component {
-constructor () {
+constructor (props) {
 super();
 this.state = {
-    speed: 10
-};
-
+    balance: "",
+    value: 1000
+  };
 }
+// This will be triggered once Render is Finished and will Update Data in Firebase.
 componentDidMount () {
     const rootRef = fire.database().ref().child('react');
-    const speedRef = rootRef.child('speed');
+    const balanceRef = rootRef.child('balance');
   //   console.log(speedRef);
-    speedRef.on('value', snap => {
+    balanceRef.on('value', snap => {
       this.setState({
-      speed: snap.val()
+      balance: snap.val()
     });
   });
-}
 
+// Push data to the Database with Push Key
+  const valueRef = fire.database().ref().child('value').push().key;
+  var updates = {};
+  updates['value'] = this.state.value;
+  return fire.database().ref().update(updates);
+}
+// The Initial Main Render Function
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.speed}</Text>
+        <Text>{this.state.balance}</Text>
+          <Button/>
       </View>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -61,6 +70,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    backgroundColor: "#33AAFF",
+    borderWidth: 10,
+    borderRadius: 20,
+    borderColor: "#33AAFF",
+    padding: 5
+  },
+  buttonText: {
+      fontSize: 24,
+      fontWeight: "bold",
+      color: "#FFFFFF"
+  }
 });
-
 Expo.registerRootComponent(App);
