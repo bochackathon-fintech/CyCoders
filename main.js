@@ -4,7 +4,9 @@ import { StyleSheet, Text, View, TouchableHighlight} from 'react-native';
 import * as firebase from 'firebase';
 import { Kaede } from 'react-native-textinput-effects';
 
-const config = {
+
+// Firebase SDK Connection
+export const config = {
   apiKey: "AIzaSyDu7lwUQeF0rXLTLEP5dzq6tIH8V2kOJgE",
   authDomain: "awsomepiggy-aacf0.firebaseapp.com",
   databaseURL: "https://awsomepiggy-aacf0.firebaseio.com",
@@ -15,7 +17,7 @@ const config = {
 var fire =  firebase.initializeApp(config);
 
 // Define Clickable Button for Main Render Function
-class Button extends React.Component{
+export default class Button extends React.Component{
   render () {
     return (
       <TouchableHighlight>
@@ -28,7 +30,7 @@ class Button extends React.Component{
 }
 // Initial App Class Component
 class App extends React.Component {
-constructor (props) {
+constructor () {
 super();
 this.state = {
     balance: "",
@@ -60,7 +62,7 @@ componentDidMount () {
       //  <Text>{this.state.balance}</Text>
       //    <Button/>
       <View style={[styles.card1, { backgroundColor: '#F9F7F6' }]}>
-      <Text style={styles.title}>Kaede</Text>
+      <Text style={styles.title}></Text>
       <Kaede
         label={'Euro'}
         defaultValue={'Place Amount: '}
