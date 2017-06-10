@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight} from 'react-native';
 import * as firebase from 'firebase';
-
+import { Kaede } from 'react-native-textinput-effects';
 
 const config = {
   apiKey: "AIzaSyDu7lwUQeF0rXLTLEP5dzq6tIH8V2kOJgE",
@@ -18,7 +18,7 @@ var fire =  firebase.initializeApp(config);
 class Button extends React.Component{
   render () {
     return (
-      <TouchableHighlight onPress = { () => { console.log(this.props.value)}} >
+      <TouchableHighlight>
       <View style={styles.button}>
         <Text style={styles.buttonText}>Tap Me</Text>
       </View>
@@ -26,7 +26,6 @@ class Button extends React.Component{
     )
   }
 }
-
 // Initial App Class Component
 class App extends React.Component {
 constructor (props) {
@@ -56,10 +55,33 @@ componentDidMount () {
 // The Initial Main Render Function
   render() {
     return (
-      <View style={styles.container}>
-        <Text>{this.state.balance}</Text>
-          <Button/>
-      </View>
+    //  <View style={styles.container}>
+      //  <Text style = {styles.Header}>Place your Amount:</Text>
+      //  <Text>{this.state.balance}</Text>
+      //    <Button/>
+      <View style={[styles.card1, { backgroundColor: '#F9F7F6' }]}>
+      <Text style={styles.title}>Kaede</Text>
+      <Kaede
+        label={'Euro'}
+        defaultValue={'Place Amount: '}
+        editable={false}
+      />
+      <Kaede
+        style={styles.input}
+        label={'Amount:'}
+        labelStyle={{
+          color: 'white',
+          backgroundColor: '#fcb794',
+        }}
+        inputStyle={{
+          color: 'white',
+          backgroundColor: '#db8d67',
+        }}
+        keyboardType="numeric"
+      />
+    </View>
+    //  </View>
+
     );
   }
 }
@@ -81,6 +103,17 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: "bold",
       color: "#FFFFFF"
+  },
+  Header: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "#33AAFF",
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 18,
+    borderColor: '#33AAFF',
+    borderRadius: 30,
   }
 });
 Expo.registerRootComponent(App);
