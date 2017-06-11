@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "118466022804",
+    "firebase_url": "https://psychic-force-170214.firebaseio.com",
+    "project_id": "psychic-force-170214",
+    "storage_bucket": "psychic-force-170214.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118466022804:android:2af2c292be2bcd7c",
+        "android_client_info": {
+          "package_name": "com.bocapp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118466022804-7ujr3uifn79tf91n24ti39664mp4tcrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxB8WiC4b08e3txc_ZN6sp83ptguxy8R4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
